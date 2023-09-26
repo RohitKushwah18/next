@@ -1,11 +1,10 @@
-import FirebaseAuth from '@/components/auth/FirebaseAuth'
 
+import Login from './login.js'
 const Auth = () => {
     return (
         <div>
             <div>
-                <FirebaseAuth />
-                <p><a href="/">Go Home</a></p>
+                <Login />
             </div>
         </div>
     )

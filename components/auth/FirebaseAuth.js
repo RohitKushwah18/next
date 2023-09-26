@@ -13,18 +13,16 @@ import { mapUserData } from '@/lib/firebase/mapUserData'
 
 initFirebase() // initialize firebase
 
-const auth = getAuth()
+export const auth = getAuth()
 
 const firebaseAuthConfig = {
-    signInFlow: 'popup',
-    // Auth providers
-    // https://github.com/firebase/firebaseui-web#configure-oauth-providers
+
     signInOptions: [
         {
             provider: EmailAuthProvider.PROVIDER_ID,
             requireDisplayName: true,
         },
-        // add additional auth flows below
+    
         GoogleAuthProvider.PROVIDER_ID,
         TwitterAuthProvider.PROVIDER_ID,
         GithubAuthProvider.PROVIDER_ID,
@@ -51,13 +49,17 @@ const FirebaseAuth = () => {
     return (
         <div>
             {renderAuth ? (
+                <div>    
                 <StyledFirebaseAuth
                     uiConfig={firebaseAuthConfig}
                     firebaseAuth={auth}
                 />
+                </div>
+                
             ) : null}
         </div>
     )
 }
 
 export default FirebaseAuth
+
