@@ -12,19 +12,18 @@ const RealtimeData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const dataRef = ref(realDB, '132JZ9o0QTcbUfUEOzEoOBXkDCTCe1aW0kK7ZelgbjgY/Sheet1');
+        const dataRef = ref(realDB, '11ok3SAsg6MF5vWGbDyk_bpI54tyqLMZp-23P4l79N2E/forecast');
         const dataSnapshot = await get(dataRef);
 
         if (dataSnapshot.exists()) {
           const dataFromFirebase = dataSnapshot.val();
-
+         
           const dataArray = Object.keys(dataFromFirebase).map((key) => ({
             id: key,
             ...Object.values(dataFromFirebase[key])
           }));
-
+         
           setData(dataArray.slice(1,dataArray.length));
-          console.log(dataArray)
           if (dataArray.length > 0) {
             const dynamicColumns = Object.keys(dataArray[0])
               .filter((key) => key !== 'id')
@@ -52,7 +51,7 @@ const RealtimeData = () => {
               }));
 
             setColumns(dynamicColumns);
-            console.log(dynamicColumns)
+      
           } else {
             setError('No data available');
           }

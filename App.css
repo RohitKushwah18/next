@@ -117,7 +117,7 @@
 }
 
 .nav-links button:hover {
-  color: #ff9900; /* Change the color on hover */
+  color: #ff9900; 
 }
 
 .login-container {
@@ -155,4 +155,27 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 13px;
+}
+
+
+.table-selection-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.select-box {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.table-display {
+  margin-top: 10px;
 }
